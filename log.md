@@ -9,6 +9,15 @@ Append-only. Newest at the top. One entry per session — ingest, query, or main
 
 ---
 
+## 2026-05-29 — Schema rule: extract paper titles from PDF content, not filenames
+
+**Trigger**: User instruction on ingest behavior.
+
+- Added a **Titles vs. filenames (papers)** convention to `CLAUDE.md`: never infer a paper's title from its filename; always open the PDF and extract the title from page 1, used verbatim as the summary note's `title:`. The source PDF filename in `00-Sources/` stays unchanged; the summary *slug* may still derive from the filename.
+- Reinforced in INGEST steps 2 (Read) and 3 (Summarize).
+
+---
+
 ## 2026-05-29 — Removed the People & labs (Entities) layer
 
 **Trigger**: User asked to remove the People & labs folder.

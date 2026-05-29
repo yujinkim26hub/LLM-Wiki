@@ -27,6 +27,8 @@ log.md              append-only chronological log of every action
 
 **Filenames.** Lowercase kebab-case. `richard-sutton.md`, not `Richard Sutton.md`. Obsidian wiki-links resolve case-insensitively but kebab-case keeps git diffs and shell tools sane.
 
+**Titles vs. filenames (papers).** Never infer a paper's title from its filename. **Always open the PDF and extract the title from the paper's actual content** (the title on the first page), and use that verbatim as the summary note's `title:`. Filenames are often abbreviations, author-year slugs, or DOIs and are not reliable titles. Leave the original source PDF filename in `00-Sources/` **unchanged** — do not rename it to match the title. (The summary page's own slug may still be a kebab-case author-year derived from the filename; this rule is about the human-readable `title:`, not the slug.)
+
 **Frontmatter.** Every wiki page starts with YAML frontmatter. See `90-Meta/templates/` for the exact shape per page type. Common fields:
 
 ```yaml
@@ -56,8 +58,8 @@ sources: ["[[10-Summaries/some-source]]"]
 Triggered when the user says "ingest", "ingest the new sources", drops a file in `00-Sources/`, or similar.
 
 1. **Discover.** Run `tools/pending-sources.sh` (or just diff `00-Sources/` against `10-Summaries/`) to find sources that don't yet have a summary page.
-2. **Read.** Read each pending source in full. For PDFs, use the Read tool with the `pages` parameter for long ones. For URLs referenced inside a source, use WebFetch only if the user asks you to chase them.
-3. **Summarize.** For each source, write `10-Summaries/<source-slug>.md` from the `summary.md` template. The summary captures: thesis, key claims, methods/evidence, surprising bits, and a list of concepts touched.
+2. **Read.** Read each pending source in full. For PDFs, use the Read tool with the `pages` parameter for long ones. **Extract the paper's real title from page 1 of the PDF content — never guess it from the filename.** For URLs referenced inside a source, use WebFetch only if the user asks you to chase them.
+3. **Summarize.** For each source, write `10-Summaries/<source-slug>.md` from the `summary.md` template. Set the note's `title:` to the title you extracted from the PDF content (verbatim), not a filename-derived guess. Leave the original PDF filename in `00-Sources/` unchanged. The summary captures: thesis, key claims, methods/evidence, surprising bits, and a list of concepts touched.
 4. **Touch the graph.** This is the part that makes a wiki a wiki. For each source you ingest, update or create **at least 5–15** other pages:
    - For every concept the source defines, refines, or contradicts: update the concept page. If the source contradicts an existing claim, do not silently overwrite — add the new claim with its citation and flag the contradiction in a `## Open questions` section.
    - For every topic the source is relevant to: add a link from the topic page to the new summary.
