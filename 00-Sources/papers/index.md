@@ -9,6 +9,7 @@ Raw academic papers ingested into the wiki. Open-access papers are published her
 
 ## Sub-collections
 
+- [[00-Sources/papers/single-cell-foundation-models/index|Single-cell foundation models]] — foundation/deep-learning models for single-cell genomics, plus a field review
 - [[00-Sources/papers/virtual/index|Virtual perturbation]] — single-cell in silico knockout / virtual perturbation screening papers
 
 ## Related

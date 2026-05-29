@@ -10,7 +10,7 @@ A living knowledge base — **built and maintained with the help of an LLM**, fo
 
 > You curate sources and ask questions. The LLM reads each source in full, distills it into a summary, and weaves it into a graph of concepts, topics, and synthesis notes. Knowledge here is meant to **compound** — every ingest leaves the wiki measurably richer.
 
-First source ingested: a single-cell *virtual perturbation* study ([[10-Summaries/zhu-2026-stat3-dentinogenesis|Zhu et al. 2026]]) that uses in silico knockouts to nominate STAT3 as a regulator of dentinogenesis, then confirms it experimentally. The graph so far gathers the [[40-Topics/virtual-perturbation-screening|virtual-perturbation methods]] and the [[40-Topics/tooth-development|tooth-development biology]] it touches.
+The wiki currently centres on two threads: [[40-Topics/single-cell-foundation-models|single-cell foundation models]] (scBERT, Geneformer, scGPT, scFoundation, CellFM, UCE, Nicheformer, scGraphformer, plus a field review — compared in [[50-Notes/comparing-single-cell-foundation-models|this note]]) and [[40-Topics/virtual-perturbation-screening|virtual perturbation screening]] (CellOracle, scTenifoldKnk, GenKI, and the [[10-Summaries/zhu-2026-stat3-dentinogenesis|STAT3/dentinogenesis]] worked example). The two meet where scFMs are used to predict perturbation responses.
 
 ---
 

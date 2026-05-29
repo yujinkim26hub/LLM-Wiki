@@ -7,7 +7,20 @@ description: Definitions of the methods, terms, and ideas that recur across sour
 
 Definitions: methods, terms, theories, ideas. Each concept page gives the shortest correct definition, why it matters, variants across sources, and contested points — all cited back to the summaries that support them.
 
-### Methods — single-cell & virtual perturbation
+### Single-cell foundation models — core ideas
+
+- [[single-cell-foundation-model]] — large self-supervised transformers over millions of cells
+- [[transformer]] — the architecture; [[attention-mechanism]] — its core operation
+- [[self-supervised-pretraining]] — learning from unlabelled cells; [[masked-language-modelling]] — the usual objective
+- [[expression-tokenization]] — turning expression into tokens (the key design fork); [[rank-value-encoding]] — the rank-ordering scheme
+- [[cell-embedding]] / [[gene-embedding]] — the reusable model outputs
+- [[transfer-learning]] / [[fine-tuning]] / [[zero-shot-learning]] — how scFMs are applied
+- [[cell-type-annotation]] / [[batch-integration]] — the main downstream tasks
+- [[gene-gene-interaction]] — dependencies scFMs aim to capture
+- [[scrna-seq]] / [[spatial-transcriptomics]] / [[multi-omics]] — data modalities
+- [[graph-neural-network]] — the graph-based alternative (graph transformers, VGAE)
+
+### Methods — virtual perturbation & gene networks
 
 - [[in-silico-perturbation]] — simulating a gene knockout on a GRN to predict fate change
 - [[celloracle]] — TF-knockout simulation as a shift in the cellular vector field

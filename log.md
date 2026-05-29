@@ -9,6 +9,22 @@ Append-only. Newest at the top. One entry per session — ingest, query, or main
 
 ---
 
+## 2026-05-29 — Ingest: 10 single-cell foundation model / virtual-perturbation papers
+
+**Trigger**: User asked to copy + ingest two Google Drive folders (single-cell foundation model collection: `기타` and `article`).
+
+- **Sources copied** (10 PDFs): 9 → new `00-Sources/papers/single-cell-foundation-models/` (scBERT, Geneformer, UCE, scGPT, scFoundation, CellFM, Nicheformer, scGraphformer, + the Baek 2025 review); 1 → `00-Sources/papers/virtual/` (GenKI — it's a virtual-knockout method, not an scFM). Titles extracted from PDF page 1; originals unchanged.
+- **Summaries created** (10): `yang-2022-scbert`, `theodoris-2023-geneformer`, `rosen-2023-universal-cell-embeddings`, `cui-2024-scgpt`, `hao-2024-scfoundation`, `zeng-2025-cellfm`, `tejada-lapuerta-2025-nicheformer`, `fan-2024-scgraphformer`, `baek-2025-scfm-review`, `yang-2023-genki`. (Per-paper reading + drafting was fanned out to subagents; the graph weave below was done centrally.)
+- **Concepts created** (19): single-cell-foundation-model, transformer, attention-mechanism, self-supervised-pretraining, masked-language-modelling, expression-tokenization, rank-value-encoding, cell-embedding, gene-embedding, transfer-learning, fine-tuning, zero-shot-learning, cell-type-annotation, batch-integration, gene-gene-interaction, scrna-seq, spatial-transcriptomics, multi-omics, graph-neural-network.
+- **Concepts updated** (2): `in-silico-perturbation` and `gene-regulatory-network` — added GenKI (VGAE virtual knockout) and the scFM route to GRN inference / perturbation prediction, connecting the scFM cluster to the existing virtual-perturbation cluster.
+- **Topics**: created `single-cell-foundation-models`; extended `virtual-perturbation-screening` (GenKI + scFMs-as-predictors).
+- **Synthesis note created**: `comparing-single-cell-foundation-models` — table + analysis across 8 scFMs and the review (axes: tokenization, scale, application regime, modality; bottom line that scFMs don't yet reliably beat task-specific baselines).
+- **Source folder pages**: created `single-cell-foundation-models/index.md` (lists all 9 PDFs + summaries); updated `papers/index.md` and `virtual/index.md`.
+- **Indexes updated**: Summaries, Concepts, Topics, Notes.
+- **Notable findings / tensions**: the load-bearing cross-source tension is the review's benchmarking critique — zero-shot scFMs often do **not** beat task-specific tools (wins in cell-type/gene-function prediction; losses in imputation, cross-platform integration, network inference), and attention-derived networks are an unreliable signal. The major design fork is expression tokenization (rank vs binning vs continuous vs protein-embedding). "More data" shows diminishing/negative returns. scGraphformer is supervised-per-dataset, not a true pretrained scFM — flagged honestly.
+
+---
+
 ## 2026-05-29 — Publish 00-Sources folders + PDF source references on the site
 
 **Trigger**: User asked to make all source folders browsable on the public Quartz site, including `00-Sources/papers/virtual`, and to expose the ingested PDF as a source reference.
