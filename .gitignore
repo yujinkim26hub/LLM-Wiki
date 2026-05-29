@@ -1,0 +1,36 @@
+# Raw source PDFs and binaries — too large for git, plus copyright concerns
+00-Sources/papers/
+00-Sources/books/
+00-Sources/images/
+00-Sources/data/
+00-Sources/articles/*.pdf
+# ...but keep the folders themselves in git
+!00-Sources/**/.gitkeep
+
+# Quartz: track config + source, but not node_modules / build output / cache
+.quartz/node_modules/
+.quartz/public/
+.quartz-cache/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Obsidian (per-user UI state)
+.obsidian/
+
+# Claude Code per-user / per-project state
+.claude/
+
+# Partial downloads, temp, editor backups
+*.crdownload
+*.tmp
+*.part
+*.swp
+*.swo
+*~
+~$*
+
+# Node
+node_modules/
