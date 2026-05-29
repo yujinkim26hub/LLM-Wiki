@@ -38,4 +38,3 @@ Concrete instances that ground the concept.
 
 - [[30-Concepts/...]] — adjacent or contrasting concepts
 - [[40-Topics/...]]
-- [[20-Entities/...]]

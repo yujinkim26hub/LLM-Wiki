@@ -11,7 +11,7 @@ Based on [Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf5
 Three layers:
 
 - **Sources** — raw inputs you drop into `00-Sources/`. Immutable.
-- **Wiki** — the markdown knowledge graph (`10-Summaries/`, `20-Entities/`, `30-Concepts/`, `40-Topics/`, `50-Notes/`). Claude owns this.
+- **Wiki** — the markdown knowledge graph (`10-Summaries/`, `30-Concepts/`, `40-Topics/`, `50-Notes/`). Claude owns this.
 - **Schema** — `CLAUDE.md` + `90-Meta/templates/`. The conventions Claude follows.
 
 Two special files at the vault root:
@@ -63,7 +63,7 @@ In Claude Code, say:
 
 > Ingest the new sources.
 
-Claude will: find unsummarized files, read each one, write a `10-Summaries/<slug>.md` page, **touch 5–15 other pages** (entities, concepts, topics) to weave it into the graph, update `index.md`, and append to `log.md`.
+Claude will: find unsummarized files, read each one, write a `10-Summaries/<slug>.md` page, **touch 5–15 other pages** (concepts, topics) to weave it into the graph, update `index.md`, and append to `log.md`.
 
 ### Query
 
@@ -110,7 +110,6 @@ LLM-Wiki/
 ├── 00-Sources/                Raw sources (immutable)
 │   ├── articles/  papers/  books/  images/  data/
 ├── 10-Summaries/              One summary page per source
-├── 20-Entities/               People, orgs, places, products, projects
 ├── 30-Concepts/               Ideas, theories, definitions, methods
 ├── 40-Topics/                 Broad themes
 ├── 50-Notes/                  Synthesized findings worth keeping

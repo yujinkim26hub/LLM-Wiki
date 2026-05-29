@@ -15,10 +15,6 @@ updated: <YYYY-MM-DD>
 
 - [[30-Concepts/...]] — one-line gloss
 
-## Key entities
-
-- [[20-Entities/...]] — one-line gloss
-
 ## Sources, by sub-theme
 
 Group summaries under sub-headings so the topic page is a useful entry point.

@@ -9,7 +9,6 @@ ingested: <YYYY-MM-DD>
 doi: "<DOI without the https:// prefix>"
 journal: "<Journal name, human-readable>"
 tags: []
-entities: []   # [[20-Entities/...]] links
 concepts: []   # [[30-Concepts/...]] links
 topics: []     # [[40-Topics/...]] links
 ---
@@ -33,10 +32,6 @@ How does the source back its claims? (Empirical study, argument, anecdote, deriv
 ## Surprising or load-bearing bits
 
 What's actually new or non-obvious here? What would I want to remember in two years?
-
-## Entities mentioned
-
-- [[20-Entities/...]] — what role they play in this source
 
 ## Concepts touched
 
