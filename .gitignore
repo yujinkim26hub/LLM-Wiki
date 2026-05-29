@@ -1,11 +1,18 @@
-# Raw source PDFs and binaries — too large for git, plus copyright concerns
-00-Sources/papers/
-00-Sources/books/
-00-Sources/images/
-00-Sources/data/
+# Source files: keep the folder structure and any markdown (index/landing) pages
+# tracked so every source folder is browsable on the published site.
+#
+# Papers are open-access and are published in full — their PDFs ARE committed and
+# served on the site (see 00-Sources/papers/). Large/unpublished binaries in
+# books/images/data stay out of git, but their folders remain browsable via the
+# index.md landing page each one carries.
+00-Sources/books/**
+00-Sources/images/**
+00-Sources/data/**
 00-Sources/articles/*.pdf
-# ...but keep the folders themselves in git
+# ...but always keep folder structure, .gitkeep markers, and markdown pages
+!00-Sources/**/
 !00-Sources/**/.gitkeep
+!00-Sources/**/*.md
 
 # Quartz: track config + source, but not node_modules / build output / cache
 .quartz/node_modules/

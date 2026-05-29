@@ -10,7 +10,7 @@ A living knowledge base — **built and maintained with the help of an LLM**, fo
 
 > You curate sources and ask questions. The LLM reads each source in full, distills it into a summary, and weaves it into a graph of concepts, topics, and synthesis notes. Knowledge here is meant to **compound** — every ingest leaves the wiki measurably richer.
 
-This wiki is empty right now. Drop your first source into `00-Sources/`, open the vault in Claude Code, and say *"ingest the new sources"* to watch it grow.
+First source ingested: a single-cell *virtual perturbation* study ([[10-Summaries/zhu-2026-stat3-dentinogenesis|Zhu et al. 2026]]) that uses in silico knockouts to nominate STAT3 as a regulator of dentinogenesis, then confirms it experimentally. The graph so far gathers the [[40-Topics/virtual-perturbation-screening|virtual-perturbation methods]] and the [[40-Topics/tooth-development|tooth-development biology]] it touches.
 
 ---
 
@@ -18,6 +18,7 @@ This wiki is empty right now. Drop your first source into `00-Sources/`, open th
 
 | Section | What lives here |
 |---|---|
+| [[00-Sources/index\|Sources]] | The raw inputs — papers, articles, books, images, data (open-access source files published in full) |
 | [[10-Summaries/index\|Summaries]] | One page per source — the LLM's distillation of it |
 | [[30-Concepts/index\|Concepts]] | Definitions: methods, terms, ideas |
 | [[40-Topics/index\|Topics]] | Broad themes that gather concepts and sources |

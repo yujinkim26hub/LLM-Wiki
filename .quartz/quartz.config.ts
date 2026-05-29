@@ -23,6 +23,7 @@ const config: QuartzConfig = {
       "private",
       "templates",
       "**/.DS_Store",
+      "**/.gitkeep",
       "**/*.crdownload",
       "**/*.tmp",
       "**/*.part",

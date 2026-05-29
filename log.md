@@ -9,6 +9,33 @@ Append-only. Newest at the top. One entry per session — ingest, query, or main
 
 ---
 
+## 2026-05-29 — Publish 00-Sources folders + PDF source references on the site
+
+**Trigger**: User asked to make all source folders browsable on the public Quartz site, including `00-Sources/papers/virtual`, and to expose the ingested PDF as a source reference.
+
+- **`.gitignore`**: stopped ignoring `00-Sources/papers/` so the open-access PDF is committed and served. Restructured the binary ignores for `books/`/`images/`/`data/` to `…/**` with negations (`!00-Sources/**/`, `!…/.gitkeep`, `!…/*.md`) so their folder structure + markdown index pages stay tracked while large binaries remain ignored. Verified with `git check-ignore`: PDF tracked, folder `index.md` tracked, sample binaries still ignored.
+- **Folder landing pages** (browsable Explorer nodes — a bare PDF asset does not create an Explorer entry, only markdown pages do): created `00-Sources/index.md`, `00-Sources/papers/index.md`, `00-Sources/papers/virtual/index.md`, and stubs for `articles/`, `books/`, `images/`, `data/`.
+- **PDF source reference**: linked the original PDF from the `virtual` folder page and from the summary. Quartz's Assets emitter slugifies the literal filename (`%E2%80%90` → `-percentE2-percent80-percent90`), but markdown/wikilink resolution URL-decodes `%E2%80%90` → `‐`, so naïve links 404. Fixed by linking to the **already-slugified** filename (no `%` to decode; slugify is idempotent). Verified against a local build that both links resolve to the emitted file.
+- **Quartz config**: added `**/.gitkeep` to `ignorePatterns` so placeholder markers aren't copied as assets. (00-Sources was already not ignored, so it builds.)
+- **Index**: added a *Sources* row to the `index.md` browse table.
+- **Verified** with `npx quartz build -d ..`: 27 input files, source folders present in the Explorer tree, PDF copied to `public/00-Sources/papers/virtual/…`, all internal links resolve.
+
+---
+
+## 2026-05-29 — Ingest: Zhu et al. 2026, STAT3 in dentinogenesis (first source)
+
+**Trigger**: "Ingest the new PDFs in 00-Sources/papers/virtual."
+
+- **Source ingested** (1): `Cell Proliferation - 2026 - Zhu - Single-Cell Virtual Perturbation Screening...` (DOI 10.1111/cpr.70203, *Cell Proliferation* 2026). Title extracted from PDF page 1 (not the filename): *Single-Cell Virtual Perturbation Screening Identifies STAT3 as a Key Regulator of Dentinogenesis*.
+- **Summary created** (1): [[10-Summaries/zhu-2026-stat3-dentinogenesis]].
+- **Concepts created** (9): [[30-Concepts/in-silico-perturbation]], [[30-Concepts/celloracle]], [[30-Concepts/sctenifoldknk]], [[30-Concepts/scenic]], [[30-Concepts/cellrank]], [[30-Concepts/gene-regulatory-network]] (methods); [[30-Concepts/stat3]], [[30-Concepts/wnt-beta-catenin-signalling]], [[30-Concepts/dentinogenesis]] (biology).
+- **Topics created** (2): [[40-Topics/virtual-perturbation-screening]], [[40-Topics/tooth-development]].
+- **Indexes updated**: `index.md` (replaced the "empty wiki" blurb), `10-Summaries/index.md`, `30-Concepts/index.md`, `40-Topics/index.md`.
+- **Notable findings**: The paper is a "prediction-to-verification" template — virtual knockout (CellOracle + scTenifoldKnk) as a screening front-end, then knockdown / pharmacology / conditional-KO mouse confirm STAT3 → WNT2B → canonical Wnt drives odontoblast differentiation. The authors are candid that CellOracle's static-GRN, linear-propagation, complete-ablation assumptions make it a screening tool, not a definitive predictor — captured as a contested point on the method concepts.
+- **Tensions/gaps**: WNT2B rescue is only partial (other Wnt components also fall); no in vivo Wnt2b overexpression yet; CellOracle/scTenifoldKnk agreement reported but divergence behaviour unknown. First source, so no cross-source links yet.
+
+---
+
 ## 2026-05-29 — Schema rule: extract paper titles from PDF content, not filenames
 
 **Trigger**: User instruction on ingest behavior.
